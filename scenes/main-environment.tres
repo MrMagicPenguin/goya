@@ -1,20 +1,20 @@
-[gd_resource type="Environment" load_steps=3 format=3 uid="uid://jvmpkdwaeaq"]
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://jvmpkdwaeaq"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lg8b7"]
-sky_horizon_color = Color(0.67451, 0.682353, 0.698039, 1)
-sky_curve = 0.0175
-ground_bottom_color = Color(1, 1, 1, 1)
-ground_curve = 0.171484
+[ext_resource type="Texture2D" uid="uid://drvqka5i66on7" path="res://skyboxes/_0009_AllSkyFree_Screen_01.jpg" id="1_gnxn0"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bkfhc"]
+panorama = ExtResource("1_gnxn0")
 
 [sub_resource type="Sky" id="Sky_7bk1c"]
-sky_material = SubResource("ProceduralSkyMaterial_lg8b7")
+sky_material = SubResource("PanoramaSkyMaterial_bkfhc")
 
 [resource]
 background_mode = 1
-background_color = Color(0.360784, 0.392157, 0.462745, 1)
+background_color = Color(0.341176, 0.388235, 0.505882, 1)
+background_energy_multiplier = 0.75
 sky = SubResource("Sky_7bk1c")
-ambient_light_source = 3
-ambient_light_color = Color(0.258824, 0.25098, 0.243137, 0.909804)
+ambient_light_source = 2
+ambient_light_color = Color(0.301961, 0.309804, 0.333333, 0.909804)
 tonemap_mode = 2
 tonemap_exposure = 0.37
 tonemap_white = 2.1
