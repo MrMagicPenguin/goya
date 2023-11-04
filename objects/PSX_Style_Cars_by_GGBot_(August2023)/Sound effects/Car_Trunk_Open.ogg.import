@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bd1upisomrnde"
+path="res://.godot/imported/Car_Trunk_Open.ogg-7391bef5b09b72671dd18b73a0a0cb54.oggvorbisstr"
+
+[deps]
+
+source_file="res://objects/PSX_Style_Cars_by_GGBot_(August2023)/Sound effects/Car_Trunk_Open.ogg"
+dest_files=["res://.godot/imported/Car_Trunk_Open.ogg-7391bef5b09b72671dd18b73a0a0cb54.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
