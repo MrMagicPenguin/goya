@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://c5shg6y8wwabc"]
+
+[ext_resource type="Texture2D" uid="uid://di5kg4c5vxb1m" path="res://materials/newLinedConcrete/concrete_wall_001_diff_1k.png" id="1_hr5c8"]
+[ext_resource type="Texture2D" uid="uid://hhqc6ieqxtku" path="res://materials/newLinedConcrete/concrete_wall_001_arm_1k.png" id="2_sjxsy"]
+[ext_resource type="Texture2D" uid="uid://cckuhxlpgh27h" path="res://materials/newLinedConcrete/concrete_wall_001_nor_dx_1k.png" id="3_xaado"]
+[ext_resource type="Texture2D" uid="uid://bqpytdvlopibv" path="res://materials/newLinedConcrete/concrete_wall_001_rough_1k.png" id="4_ksjg6"]
+
+[resource]
+albedo_texture = ExtResource("1_hr5c8")
+roughness_texture = ExtResource("4_ksjg6")
+normal_enabled = true
+normal_texture = ExtResource("3_xaado")
+ao_texture = ExtResource("2_sjxsy")
+uv1_scale = Vector3(0.47, 0.47, 0.47)
+uv1_offset = Vector3(-0.105, -0.05, 0.385)
+uv1_triplanar = true

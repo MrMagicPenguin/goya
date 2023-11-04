@@ -26,10 +26,9 @@ Audio="*res://scripts/audio.gd"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-
-[dotnet]
-
-project/assembly_name="Starter Kit FPS"
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="viewport"
 
 [editor]
 
@@ -39,6 +38,10 @@ movie_writer/movie_file="D:/Godot/test.avi"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/tbloader/plugin.cfg")
+
+[filesystem]
+
+import/fbx/enabled=false
 
 [input]
 
