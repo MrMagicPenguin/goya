@@ -30,6 +30,10 @@ window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="viewport"
 
+[dotnet]
+
+project/assembly_name="Goya"
+
 [editor]
 
 movie_writer/mjpeg_quality=1.0

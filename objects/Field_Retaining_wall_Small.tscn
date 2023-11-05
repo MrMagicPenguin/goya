@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://we835crvodix"]
+
+[ext_resource type="PackedScene" uid="uid://df7tfsub2tkmp" path="res://models/Road.50_retainingWall_L.glb" id="1_6h85i"]
+[ext_resource type="Texture2D" uid="uid://hrrsf61eo7e5" path="res://models/retaining_wall_long_Concrete042A_1K-PNG_Color.png" id="2_n6x68"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ixi6"]
+albedo_texture = ExtResource("2_n6x68")
+
+[node name="Road_50_retainingWall_L" instance=ExtResource("1_6h85i")]
+
+[node name="Field_Retaining_Wall_001" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_0ixi6")
