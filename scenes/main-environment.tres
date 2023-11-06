@@ -26,7 +26,6 @@ glow_levels/2 = 0.6
 glow_levels/3 = 0.6
 glow_levels/5 = 0.0
 glow_intensity = 2.0
-fog_enabled = true
 fog_light_color = Color(0.188235, 0.215686, 0.25098, 1)
 fog_light_energy = 0.26
 fog_density = 0.015

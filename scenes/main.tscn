@@ -2756,6 +2756,16 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Roads/Grass/Fence/Fence13/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_l118y")
 
+[node name="Fence24" type="MeshInstance3D" parent="Roads/Grass/Fence"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 23.3638, 1.04632, 2.99113)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Roads/Grass/Fence/Fence24"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roads/Grass/Fence/Fence24/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
 [node name="Road_029" type="MeshInstance3D" parent="Roads"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.4595, 0, -0.006)
 mesh = SubResource("ArrayMesh_eetgm")
@@ -2825,6 +2835,36 @@ skeleton = NodePath("")
 
 [node name="Bridge_009" type="MeshInstance3D" parent="Bridge"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -53.5028, 3.88925, 52.4936)
+mesh = SubResource("ArrayMesh_fyr7t")
+skeleton = NodePath("")
+
+[node name="Bridge_014" type="MeshInstance3D" parent="Bridge"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -53.5028, 3.88925, 84.0509)
+mesh = SubResource("ArrayMesh_fyr7t")
+skeleton = NodePath("")
+
+[node name="Bridge_015" type="MeshInstance3D" parent="Bridge"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -53.5028, 3.88925, 73.5439)
+mesh = SubResource("ArrayMesh_fyr7t")
+skeleton = NodePath("")
+
+[node name="Bridge_016" type="MeshInstance3D" parent="Bridge"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -53.5028, 3.88925, 105.051)
+mesh = SubResource("ArrayMesh_fyr7t")
+skeleton = NodePath("")
+
+[node name="Bridge_017" type="MeshInstance3D" parent="Bridge"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -53.5028, 3.88925, 94.5439)
+mesh = SubResource("ArrayMesh_fyr7t")
+skeleton = NodePath("")
+
+[node name="Bridge_018" type="MeshInstance3D" parent="Bridge"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -53.5028, 3.88925, 126.051)
+mesh = SubResource("ArrayMesh_fyr7t")
+skeleton = NodePath("")
+
+[node name="Bridge_019" type="MeshInstance3D" parent="Bridge"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -53.5028, 3.88925, 115.544)
 mesh = SubResource("ArrayMesh_fyr7t")
 skeleton = NodePath("")
 
@@ -2898,11 +2938,6 @@ skeleton = NodePath("")
 [node name="5 2" type="MeshInstance3D" parent="Brownstones"]
 transform = Transform3D(-1, -7.35137e-08, 1.3027e-15, 2.98023e-08, 0, -1, 4.37114e-08, -1, 2.98023e-08, -2.00307, 8.89077, 90.6739)
 mesh = SubResource("ArrayMesh_60m0y")
-skeleton = NodePath("")
-
-[node name="6 2" type="MeshInstance3D" parent="Brownstones"]
-transform = Transform3D(-1, -7.35137e-08, 1.3027e-15, 2.98023e-08, 0, -1, 4.37114e-08, -1, 2.98023e-08, -56.5344, 9.40523, 91.7384)
-mesh = SubResource("ArrayMesh_yaui7")
 skeleton = NodePath("")
 
 [node name="6 3" type="MeshInstance3D" parent="Brownstones"]
@@ -3157,6 +3192,659 @@ skeleton = NodePath("")
 [node name="Cube3" type="MeshInstance3D" parent="Aquaduct"]
 transform = Transform3D(-3.27835e-08, 0, -0.75, 0, 0.52, 0, 0.75, 0, -3.27835e-08, 63.8188, -9.88105, 74.9966)
 mesh = SubResource("ArrayMesh_4eifx")
+skeleton = NodePath("")
+
+[node name="Fence13" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 5.85559)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence13"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence13/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence14" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 9.16706)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence14"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence14/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0357904)
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence15" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 12.4429)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence15"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence15/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence16" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 15.7186)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence16"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence16/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence17" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 18.999)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence17"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence17/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence18" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 22.2747)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence18"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence18/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence19" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 25.5505)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence19"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence19/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence20" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 28.8262)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence20"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence20/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence21" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 32.0968)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence21"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence21/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence22" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 35.4082)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence22"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence22/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0357904)
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence23" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 38.6841)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence23"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence23/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence24" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 41.9598)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence24"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence24/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence25" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 45.2402)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence25"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence25/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence26" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 48.5158)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence26"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence26/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence27" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 51.7917)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence27"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence27/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence28" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 55.0674)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence28"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence28/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence29" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 58.3535)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence29"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence29/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence30" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 61.665)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence30"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence30/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0357904)
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence31" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 64.9408)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence31"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence31/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence32" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 68.2165)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence32"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence32/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence33" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 71.4969)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence33"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence33/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence34" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 74.7726)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence34"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence34/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence35" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 78.0484)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence35"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence35/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence36" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 81.3241)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence36"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence36/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence37" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 84.5859)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence37"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence37/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence38" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 87.8973)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence38"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence38/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0357904)
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence39" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 91.1732)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence39"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence39/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence40" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 94.4489)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence40"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence40/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence41" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 97.7293)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence41"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence41/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence42" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 101.005)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence42"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence42/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence43" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 104.281)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence43"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence43/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence44" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, 107.556)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence44"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence44/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence45" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -107.594)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence45"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence45/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence46" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -104.283)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence46"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence46/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0357904)
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence47" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -101.007)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence47"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence47/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence48" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -97.7315)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence48"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence48/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence49" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -94.4511)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence49"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence49/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence50" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -91.1754)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence50"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence50/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence51" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -87.8996)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence51"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence51/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence52" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -84.6239)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence52"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence52/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence53" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -81.3533)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence53"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence53/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence54" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -78.0418)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence54"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence54/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0357904)
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence55" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -74.766)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence55"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence55/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence56" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -71.4903)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence56"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence56/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence57" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -68.2099)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence57"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence57/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence58" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -64.9342)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence58"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence58/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence59" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -61.6584)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence59"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence59/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence60" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -58.3827)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence60"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence60/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence61" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -55.0965)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence61"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence61/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence62" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -51.7851)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence62"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence62/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0357904)
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence63" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -48.5092)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence63"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence63/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence64" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -45.2336)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence64"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence64/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence65" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -41.9532)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence65"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence65/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence66" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -38.6775)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence66"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence66/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence67" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -35.4016)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence67"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence67/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence68" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -32.126)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence68"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence68/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence69" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -28.8642)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence69"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence69/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence70" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -25.5527)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence70"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence70/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0357904)
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence71" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -22.2769)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence71"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence71/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence72" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -19.0012)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence72"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence72/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence73" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -15.7208)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence73"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence73/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence74" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -12.4451)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence74"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence74/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence75" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -9.16927)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence75"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence75/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="Fence76" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.1472, 0.800438, -5.89359)
+mesh = SubResource("ArrayMesh_oxdmx")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Aquaduct/Fence76"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aquaduct/Fence76/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l118y")
+
+[node name="road_small 2" type="MeshInstance3D" parent="Aquaduct"]
+transform = Transform3D(-4.37114e-08, 0, 0.31, 0, 1, 0, -1, 0, -1.35505e-08, 26.2275, -0.350835, -4.93617)
+mesh = SubResource("ArrayMesh_vg71y")
 skeleton = NodePath("")
 
 [node name="Skyline" type="Node" parent="."]
