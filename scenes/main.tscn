@@ -1602,6 +1602,7 @@ crosshair = NodePath("../HUD/Crosshair")
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
+visible = false
 shadow_enabled = true
 shadow_opacity = 0.75
 
@@ -1711,7 +1712,7 @@ surface_material_override/0 = ExtResource("7_evrin")
 shape = SubResource("ConcavePolygonShape3D_nggy0")
 
 [node name="Corner Block2" type="MeshInstance3D" parent="Roads"]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 6.81104, -0.605205, -2.3904)
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 22.811, -0.605205, -2.3904)
 mesh = SubResource("ArrayMesh_t6bju")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_kri5l")
@@ -1804,6 +1805,149 @@ surface_material_override/0 = ExtResource("7_evrin")
 [node name="StaticBody3D" type="StaticBody3D" parent="Roads/Wall Block XStend5"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Roads/Wall Block XStend5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_sl3td")
+
+[node name="Wall Block XStend8" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 2.811, -0.605, -2.39)
+mesh = SubResource("ArrayMesh_onorp")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("7_evrin")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Roads/Wall Block XStend8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roads/Wall Block XStend8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_sl3td")
+
+[node name="Wall Block XStend9" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 6.811, -0.605, -2.39)
+mesh = SubResource("ArrayMesh_onorp")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("7_evrin")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Roads/Wall Block XStend9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roads/Wall Block XStend9/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_sl3td")
+
+[node name="Wall Block XStend10" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 10.811, -0.605, -2.39)
+mesh = SubResource("ArrayMesh_onorp")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("7_evrin")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Roads/Wall Block XStend10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roads/Wall Block XStend10/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_sl3td")
+
+[node name="Wall Block XStend11" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 14.811, -0.605, -2.39)
+mesh = SubResource("ArrayMesh_onorp")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("7_evrin")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Roads/Wall Block XStend11"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roads/Wall Block XStend11/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_sl3td")
+
+[node name="Wall Block XStend22" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 14.811, -0.605, -2.39)
+mesh = SubResource("ArrayMesh_onorp")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("7_evrin")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Roads/Wall Block XStend22"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roads/Wall Block XStend22/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_sl3td")
+
+[node name="Wall Block XStend23" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 22.811, -0.605, -6.39)
+mesh = SubResource("ArrayMesh_onorp")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("7_evrin")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Roads/Wall Block XStend23"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roads/Wall Block XStend23/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_sl3td")
+
+[node name="Wall Block XStend24" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 22.811, -0.605, -10.39)
+mesh = SubResource("ArrayMesh_onorp")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("7_evrin")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Roads/Wall Block XStend24"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roads/Wall Block XStend24/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_sl3td")
+
+[node name="Wall Block XStend25" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 22.811, -0.605, -14.39)
+mesh = SubResource("ArrayMesh_onorp")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("7_evrin")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Roads/Wall Block XStend25"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roads/Wall Block XStend25/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_sl3td")
+
+[node name="Wall Block XStend26" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 22.811, -0.605, -18.39)
+mesh = SubResource("ArrayMesh_onorp")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("7_evrin")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Roads/Wall Block XStend26"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roads/Wall Block XStend26/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_sl3td")
+
+[node name="Wall Block XStend27" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 22.811, -0.605, -22.39)
+mesh = SubResource("ArrayMesh_onorp")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("7_evrin")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Roads/Wall Block XStend27"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roads/Wall Block XStend27/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_sl3td")
+
+[node name="Wall Block XStend28" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 22.811, -0.605, -26.39)
+mesh = SubResource("ArrayMesh_onorp")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("7_evrin")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Roads/Wall Block XStend28"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roads/Wall Block XStend28/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_sl3td")
+
+[node name="Wall Block XStend29" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 22.811, -0.605, -30.39)
+mesh = SubResource("ArrayMesh_onorp")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("7_evrin")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Roads/Wall Block XStend29"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roads/Wall Block XStend29/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_sl3td")
+
+[node name="Wall Block XStend30" type="MeshInstance3D" parent="Roads"]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 22.811, -0.605, -34.39)
+mesh = SubResource("ArrayMesh_onorp")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("7_evrin")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Roads/Wall Block XStend30"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roads/Wall Block XStend30/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_sl3td")
 
 [node name="Corner Block4" type="MeshInstance3D" parent="Roads"]
@@ -2501,7 +2645,6 @@ skeleton = NodePath("")
 
 [node name="Warehouse2" type="MeshInstance3D" parent="Warehouse"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1.87392, 3.3348, -4.02189)
-visible = false
 mesh = SubResource("ArrayMesh_c6ru2")
 skeleton = NodePath("")
 

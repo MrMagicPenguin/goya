@@ -1,0 +1,32 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://yk66bgcok5il"
+path="res://.godot/imported/Wire_Spool_02.fbx-3a7256b60197db55c8c08bcd00d5afef.scn"
+
+[deps]
+
+source_file="res://models/Skybox Models/PSX_Industrial_Pack/FBX/Wire_Spool_02.fbx"
+dest_files=["res://.godot/imported/Wire_Spool_02.fbx-3a7256b60197db55c8c08bcd00d5afef.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="Scene Root"
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={}
+gltf/embedded_image_handling=1
