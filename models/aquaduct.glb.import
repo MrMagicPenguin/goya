@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cntce2fbcevr6"
-path="res://.godot/imported/aquaduct (1).glb-f627965a7a52a5f2409cffc18a6fa857.scn"
+uid="uid://b1hbp3p5ihjnc"
+path="res://.godot/imported/aquaduct.glb-180e74a9e8d3aa9e4e70b0037049f479.scn"
 
 [deps]
 
-source_file="res://models/aquaduct (1).glb"
-dest_files=["res://.godot/imported/aquaduct (1).glb-f627965a7a52a5f2409cffc18a6fa857.scn"]
+source_file="res://models/aquaduct.glb"
+dest_files=["res://.godot/imported/aquaduct.glb-180e74a9e8d3aa9e4e70b0037049f479.scn"]
 
 [params]
 
