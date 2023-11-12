@@ -43,6 +43,10 @@ movie_writer/movie_file="D:/Godot/test.avi"
 
 enabled=PackedStringArray("res://addons/tbloader/plugin.cfg")
 
+[filesystem]
+
+import/fbx/enabled=false
+
 [input]
 
 move_right={
