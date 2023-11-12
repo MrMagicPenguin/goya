@@ -1,4 +1,4 @@
-[gd_scene load_steps=187 format=3 uid="uid://dxvvlck8lej3f"]
+[gd_scene load_steps=188 format=3 uid="uid://dxvvlck8lej3f"]
 
 [ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="1_q8fpv"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_elriq"]
@@ -46,6 +46,7 @@
 [ext_resource type="PackedScene" uid="uid://50tyf5r6sdy5" path="res://models/retaining_wall_long.glb" id="44_logey"]
 [ext_resource type="Texture2D" uid="uid://hrrsf61eo7e5" path="res://models/retaining_wall_long_Concrete042A_1K-PNG_Color.png" id="45_xanha"]
 [ext_resource type="MeshLibrary" uid="uid://cva8sf5seouk1" path="res://skyscrapers.tres" id="46_w38yy"]
+[ext_resource type="PackedScene" uid="uid://4ub5eo6g15nx" path="res://scenes/Enemy.tscn" id="47_sml58"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fpmwk"]
 font = ExtResource("3_w27de")
@@ -3855,6 +3856,9 @@ mesh_library = ExtResource("46_w38yy")
 data = {
 "cells": PackedInt32Array(65396, 87, 1441792, 65361, 57, 1441792, 65306, 65466, 1441792, 65281, 65502, 1441797, 65327, 65433, 1441797, 65326, 65432, 1441797, 65347, 80, 1441798, 65265, 8, 1441798, 65266, 8, 1441798, 65307, 161, 1441798, 65367, 65522, 1441794, 65401, 44, 1441794, 65310, 65469, 1441794, 65310, 65468, 1441794, 65309, 65467, 1441794, 65273, 65506, 1441795, 65276, 65506, 1441795, 65378, 65453, 1441795, 65358, 221, 1441800, 65373, 65531, 1441800, 65256, 39, 1441796, 65391, 65509, 1441796, 65407, 136, 1441793, 65407, 10, 1441793)
 }
+
+[node name="Enemy" parent="." instance=ExtResource("47_sml58")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, 0)
 
 [connection signal="health_updated" from="Player" to="HUD" method="_on_health_updated"]
 
