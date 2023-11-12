@@ -2775,7 +2775,7 @@ skeleton = NodePath("")
 [node name="Decoration" type="Node" parent="."]
 
 [node name="Car8" type="MeshInstance3D" parent="Decoration"]
-transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 2, 0, 1)
+transform = Transform3D(-0.431167, 0, -0.417247, 0, 0.6, 0, 0.417247, 0, -0.431167, -23.554, 0, 0.600101)
 mesh = ExtResource("12_p6v4p")
 skeleton = NodePath("../..")
 
@@ -3858,7 +3858,7 @@ data = {
 }
 
 [node name="Enemy" parent="." instance=ExtResource("47_sml58")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -27.8927, 0, 0)
 
 [connection signal="health_updated" from="Player" to="HUD" method="_on_health_updated"]
 
