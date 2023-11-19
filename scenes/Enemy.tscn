@@ -25,18 +25,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_107po")
 
 [node name="EnemyGoggles" type="MeshInstance3D" parent="."]
-transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.2, 0, -0.5, 0, -2.18557e-08, 0.0034309, 1.4, -0.463529)
+transform = Transform3D(-2.18557e-08, 0, 0.25, 0, 0.2, 0, -0.5, 0, -1.09278e-08, 0.0034309, 1.4, -0.415754)
 mesh = SubResource("BoxMesh_h5dkl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_47osp")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="FoVArea" type="Area3D" parent="."]
 
-[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Area3D"]
+[node name="FoVColl" type="CollisionPolygon3D" parent="FoVArea"]
 transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0.00782472, 1, -0.559893)
-polygon = PackedVector2Array(0, 0, 8, 6, 8, -6)
+depth = 2.0
+polygon = PackedVector2Array(0, 0, 6, 3, 6, -3)
 
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="body_entered" from="FoVArea" to="." method="_on_midrange_body_entered"]
+[connection signal="body_exited" from="FoVArea" to="." method="_on_midrange_body_exited"]
