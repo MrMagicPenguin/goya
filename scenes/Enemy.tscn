@@ -37,7 +37,7 @@ shape = SubResource("CapsuleShape3D_47osp")
 [node name="FoVColl" type="CollisionPolygon3D" parent="FoVArea"]
 transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0.00782472, 1, -0.559893)
 depth = 2.0
-polygon = PackedVector2Array(0, 0, 6, 3, 6, -3)
+polygon = PackedVector2Array(0.5, 1, 5, 3, 5, -3, 0.5, -1, -0.5, -1, -1.2, 0, -0.5, 1)
 
 [connection signal="body_entered" from="FoVArea" to="." method="_on_midrange_body_entered"]
 [connection signal="body_exited" from="FoVArea" to="." method="_on_midrange_body_exited"]

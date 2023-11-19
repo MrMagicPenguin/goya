@@ -6,13 +6,17 @@ var space_state
 var inFOV = false
 var inLOS = false
 var currentEnemyState
+var detectionMeter = 0
 
+var lastKnownPos
+
+@onready var enemy = $"."
 @onready var fov = $FoVArea
 @onready var fovCone = $FoVArea/FoVColl
 
 enum EnemyState {
-	SPOT_PLAYER,
-	LOW_ALERT,
+	SEARCHING,
+	SUSPICIOUS,
 	PATROL
 	}
 
@@ -31,76 +35,81 @@ func _physics_process(delta):
 		var result = space_state.intersect_ray(rayCastQueryParams)
 		if result: # make sure that the intersect ray has been created in the first place
 			if result.collider.is_in_group("Player"): # ensure the object we are hitting is the Player.
-				print("Line of Sight of " + str(result.collider))
 				inLOS = true
-				currentEnemyState = EnemyState.SPOT_PLAYER
+				currentEnemyState = EnemyState.SEARCHING
+				handle_detection_rate(getDistanceToPlayer(result.position), 1, 3, 5, 1)
 			else:
 				# Player is within FoV cone, but does not have consistent Line of Sight
 				inLOS = false
-				currentEnemyState = EnemyState.LOW_ALERT
+				currentEnemyState = EnemyState.SUSPICIOUS
+
+		if detectionMeter >= 3000:
+			pass
+
 
 func _process(delta):
+	print(detectionMeter)
 	handle_state(currentEnemyState)
 	if inFOV && inLOS == true:
 		look_at(target.global_transform.origin, Vector3.UP) # Look at the player obj
 
+	
+
+		
 func _on_midrange_body_entered(body):
 	if body.is_in_group("Player"):
 		target = body
 		inFOV = true
-		adjust_fov_cone(3,3)
-		currentEnemyState = EnemyState.LOW_ALERT
+		# lastKnownPos = body.global_transform.origin
+		# go to last known position
+		currentEnemyState = EnemyState.SUSPICIOUS
+
 
 func _on_midrange_body_exited(body):
 	if body.is_in_group("Player"):
-			target = null
-			inFOV = false
-			currentEnemyState = EnemyState.PATROL
-
-func _on_close_range_area_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	print("You are already dead.")
-	# TODO: Differentiate between being Close behind/Close in front
-	if body.is_in_group("Player"):
-		target = body
-		currentEnemyState = EnemyState.SPOT_PLAYER
-
-func _on_close_range_area_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
-	print("Nani??")
-	if body.is_in_group("Player"):
 		target = null
-		currentEnemyState = EnemyState.LOW_ALERT
+		inFOV = false
+		# get last known position
+		# lastKnownPos = body.global_transform
+		# go to last known position
+		# when you reach last known position
+		# turn around/patrol
+		currentEnemyState = EnemyState.PATROL
+
 
 func set_color(col):
 	$EnemyBody.get_active_material(0).set_albedo(col)
-	
+
+
 func handle_state(_state):
 	match (_state):
-		EnemyState.LOW_ALERT:
-			low_alert()
-		EnemyState.SPOT_PLAYER:
-			spot_player()
+		EnemyState.SUSPICIOUS:
+			_suspicious()
+		EnemyState.SEARCHING:
+			_searching()
 		EnemyState.PATROL:
-			patrol()
-			
+			_patrol()
 
-func patrol():
+func _patrol():
 	set_color(Color.DARK_BLUE)
-func low_alert():
+func _suspicious():
 	set_color(Color.YELLOW)
-func spot_player():
+func _searching():
 	set_color(Color.RED)
-	
-func adjust_fov_cone(x,z):
-	# Takes in two new X/Z coordinates to increase size of cone. 
-	# Default "Mid Range" is 6,3
-	# Get current coords. If we did math instead of setting them directly, we would need this.
-	var current_fov = fovCone.polygon
-	# Sets new FOV Coords.
-	# First index is always 0,0 as this is the center of the Enemy.
-	# second index is the "Right" coordinate (Positive X/Z)
-	# third index is the "Left" coordinate (Positive X/-Z)
-	var new_fov = [Vector2(0, 0), Vector2(x, z), Vector2(x, -z)]
-	# Set the cone's polygon to use the new coordinates
-	fovCone.polygon = new_fov
-	
 
+func getDistanceToPlayer(player):
+	return enemy.global_transform.origin.distance_to(player)
+	
+func increment_detectionMeter(rate):
+	detectionMeter += rate
+
+func decrement_detectionMeter(rate):
+	detectionMeter -= rate
+
+func handle_detection_rate(distance, min_dist, mid_dist, max_dist, rate):
+	if distance <= min_dist:
+		currentEnemyState = EnemyState.SEARCHING
+	elif distance >= min_dist and distance <= mid_dist:
+		increment_detectionMeter(rate * 2)
+	elif distance >= mid_dist and distance <= max_dist:
+		increment_detectionMeter(rate)
