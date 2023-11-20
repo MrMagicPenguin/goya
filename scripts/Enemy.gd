@@ -1,25 +1,26 @@
 extends CharacterBody3D
+#class_name Enemy
 
 var target
 var space_state
-
+var detectionMeter = 0
 var inFOV = false
 var inLOS = false
-var currentEnemyState
+
+@export var maxDetectionMeter = 3000
 
 @onready var fov = $FoVArea
 @onready var fovCone = $FoVArea/FoVColl
 
-enum EnemyState {
-	SPOT_PLAYER,
-	LOW_ALERT,
-	PATROL
-	}
+
 
 func _ready():
 	space_state = get_world_3d().direct_space_state
 
 func _physics_process(delta):
+	pass
+
+func handleEnemyVision():
 	if target:
 		# creates object "RayQueryParameters3D" which is a dict. 
 		var rayCastQueryParams = PhysicsRayQueryParameters3D.new()
@@ -33,14 +34,14 @@ func _physics_process(delta):
 			if result.collider.is_in_group("Player"): # ensure the object we are hitting is the Player.
 				print("Line of Sight of " + str(result.collider))
 				inLOS = true
-				currentEnemyState = EnemyState.SPOT_PLAYER
+				increment_detectionMeter(1)
+				
 			else:
 				# Player is within FoV cone, but does not have consistent Line of Sight
 				inLOS = false
-				currentEnemyState = EnemyState.LOW_ALERT
+	decrement_detectionMeter(1)
 
 func _process(delta):
-	handle_state(currentEnemyState)
 	if inFOV && inLOS == true:
 		look_at(target.global_transform.origin, Vector3.UP) # Look at the player obj
 
@@ -48,59 +49,40 @@ func _on_midrange_body_entered(body):
 	if body.is_in_group("Player"):
 		target = body
 		inFOV = true
-		adjust_fov_cone(3,3)
-		currentEnemyState = EnemyState.LOW_ALERT
 
 func _on_midrange_body_exited(body):
 	if body.is_in_group("Player"):
 			target = null
 			inFOV = false
-			currentEnemyState = EnemyState.PATROL
 
 func _on_close_range_area_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	print("You are already dead.")
 	# TODO: Differentiate between being Close behind/Close in front
 	if body.is_in_group("Player"):
 		target = body
-		currentEnemyState = EnemyState.SPOT_PLAYER
 
 func _on_close_range_area_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
 	print("Nani??")
 	if body.is_in_group("Player"):
 		target = null
-		currentEnemyState = EnemyState.LOW_ALERT
 
 func set_color(col):
 	$EnemyBody.get_active_material(0).set_albedo(col)
 	
-func handle_state(_state):
-	match (_state):
-		EnemyState.LOW_ALERT:
-			low_alert()
-		EnemyState.SPOT_PLAYER:
-			spot_player()
-		EnemyState.PATROL:
-			patrol()
-			
+func increment_detectionMeter(rate):
+	if detectionMeter <= maxDetectionMeter:
+		detectionMeter += rate
 
-func patrol():
-	set_color(Color.DARK_BLUE)
-func low_alert():
-	set_color(Color.YELLOW)
-func spot_player():
-	set_color(Color.RED)
-	
-func adjust_fov_cone(x,z):
-	# Takes in two new X/Z coordinates to increase size of cone. 
-	# Default "Mid Range" is 6,3
-	# Get current coords. If we did math instead of setting them directly, we would need this.
-	var current_fov = fovCone.polygon
-	# Sets new FOV Coords.
-	# First index is always 0,0 as this is the center of the Enemy.
-	# second index is the "Right" coordinate (Positive X/Z)
-	# third index is the "Left" coordinate (Positive X/-Z)
-	var new_fov = [Vector2(0, 0), Vector2(x, z), Vector2(x, -z)]
-	# Set the cone's polygon to use the new coordinates
-	fovCone.polygon = new_fov
-	
+func decrement_detectionMeter(rate):
+	if detectionMeter >= 0:
+		detectionMeter -= rate
+
+func handle_detection_rate(distance, min_dist, mid_dist, max_dist, rate):
+	if distance <= min_dist:
+		pass
+	elif distance >= min_dist and distance <= mid_dist:
+		increment_detectionMeter(rate * 2)
+	elif distance >= mid_dist and distance <= max_dist:
+		increment_detectionMeter(rate)
+
 
