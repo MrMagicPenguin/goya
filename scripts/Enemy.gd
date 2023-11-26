@@ -7,7 +7,7 @@ var detectionMeter = 0
 var inFOV = false
 var inLOS = false
 
-@export var maxDetectionMeter = 3000
+@export var maxDetectionMeter = 300
 
 var lastKnownPos
 
@@ -56,11 +56,11 @@ func set_color(col):
 	$EnemyBody.get_active_material(0).set_albedo(col)
 	
 func increment_detectionMeter(rate):
-	if detectionMeter <= maxDetectionMeter:
+	if detectionMeter < maxDetectionMeter:
 		detectionMeter += rate
 
 func decrement_detectionMeter(rate):
-	if detectionMeter >= 0:
+	if detectionMeter > 0:
 		detectionMeter -= rate
 	
 func handle_detection_rate(distance, min_dist, mid_dist, max_dist, rate):
@@ -86,13 +86,12 @@ func handleEnemyVision():
 		var result = space_state.intersect_ray(rayCastQueryParams)
 		if result: # make sure that the intersect ray has been created in the first place
 			if result.collider.is_in_group("Player"): # ensure the object we are hitting is the Player.
-				print("Line of Sight of " + str(result.collider))
 				inLOS = true
 				increment_detectionMeter(1)
-
 			else:
 				# Player is within FoV cone, but does not have consistent Line of Sight
 				inLOS = false
-	else: 
-		decrement_detectionMeter(1)
+				decrement_detectionMeter(1)
+	if !target and !inLOS:
+		decrement_detectionMeter(1)	
 

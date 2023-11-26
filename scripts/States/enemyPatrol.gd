@@ -1,7 +1,6 @@
-extends State
+extends EnemyState
 class_name enemyPatrol
 
-@export var moveSpeed: float
 
 func Enter():
 	pass

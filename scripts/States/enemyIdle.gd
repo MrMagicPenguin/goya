@@ -1,11 +1,9 @@
-extends State
+extends EnemyState
 class_name enemyIdle
 
-@export var enemy: CharacterBody3D
-@export var moveSpeed: float
 
 func Enter():
-	pass
+	enemy.set_color(Color.BLUE)
 	
 func Exit():
 	pass
@@ -15,5 +13,5 @@ func Update(_delta: float):
 	
 func Physics_Update(_delta: float):
 	enemy.handleEnemyVision()
-	if enemy.maxDetectionMeter:
-		Transitioned.emit(self, "enemySuspicious")
+	if enemy.detectionMeter >= enemy.maxDetectionMeter / 2:
+		Transitioned.emit(self, "stateEnemySuspicious")

@@ -1,8 +1,8 @@
 extends Node
 
-@export var initial_state : State
+@export var initial_state : EnemyState
 
-var current_state : State
+var current_state : EnemyState
 var states : Dictionary = {}
 
 
@@ -11,7 +11,7 @@ var states : Dictionary = {}
 #When Transistion signal occurs, call on_child_transition
 func _ready():
 	for child in get_children():
-		if child is State:
+		if child is EnemyState:
 			states[child.name.to_lower()] = child
 			child.Transitioned.connect(on_child_transition)
 			
@@ -28,6 +28,7 @@ func _process(delta):
 		
 #ONPHYSICSTICK - If there is a value for current_state call current_state.Physics_Update func
 func _physics_process(delta):
+	Global.debug.add_property("Enemy State", current_state.name, 3)
 	if current_state:
 		current_state.Physics_Update(delta)
 		

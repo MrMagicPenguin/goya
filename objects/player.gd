@@ -112,6 +112,9 @@ func _input(event):
 		
 		rotation_target.y -= event.relative.x / mouse_sensitivity
 		rotation_target.x -= event.relative.y / mouse_sensitivity
+	
+	if event.is_action_pressed("exit"):
+		get_tree().quit()
 
 func handle_controls(_delta):
 	

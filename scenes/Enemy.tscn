@@ -1,6 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://4ub5eo6g15nx"]
+[gd_scene load_steps=12 format=3 uid="uid://4ub5eo6g15nx"]
 
 [ext_resource type="Script" path="res://scripts/Enemy.gd" id="1_b4llt"]
+[ext_resource type="Script" path="res://scenes/State Machine.gd" id="2_fiido"]
+[ext_resource type="Script" path="res://scripts/States/enemyIdle.gd" id="3_k4riw"]
+[ext_resource type="Script" path="res://scripts/States/enemyPatrol.gd" id="4_4dcyq"]
+[ext_resource type="Script" path="res://scripts/States/enemySuspicious.gd" id="5_3av34"]
+[ext_resource type="Script" path="res://scripts/States/enemySearching.gd" id="6_sf0rn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_20nla"]
 albedo_color = Color(0, 0.188235, 0.368627, 1)
@@ -38,6 +43,22 @@ shape = SubResource("CapsuleShape3D_47osp")
 transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0.00782472, 1, -0.559893)
 depth = 2.0
 polygon = PackedVector2Array(0.5, 1, 5, 3, 5, -3, 0.5, -1, -0.5, -1, -1.2, 0, -0.5, 1)
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_fiido")
+initial_state = NodePath("stateEnemyIdle")
+
+[node name="stateEnemyIdle" type="Node" parent="StateMachine"]
+script = ExtResource("3_k4riw")
+
+[node name="stateEnemyPatrol" type="Node" parent="StateMachine"]
+script = ExtResource("4_4dcyq")
+
+[node name="stateEnemySuspicious" type="Node" parent="StateMachine"]
+script = ExtResource("5_3av34")
+
+[node name="stateEnemySearching" type="Node" parent="StateMachine"]
+script = ExtResource("6_sf0rn")
 
 [connection signal="body_entered" from="FoVArea" to="." method="_on_midrange_body_entered"]
 [connection signal="body_exited" from="FoVArea" to="." method="_on_midrange_body_exited"]
