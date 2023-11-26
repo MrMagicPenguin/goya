@@ -20,26 +20,11 @@ func _ready():
 	space_state = get_world_3d().direct_space_state
 
 func _physics_process(_delta):
+	Global.debug.add_property("detectionMeter", detectionMeter, 1)
+	Global.debug.add_property("target?", target, 2)
+	handleEnemyVision()
+	print(detectionMeter)
 
-	Global.debug.add_property("detectionMeter", detectionMeter, 2)
-	if target:
-		# creates object "RayQueryParameters3D" which is a dict. 
-		var rayCastQueryParams = PhysicsRayQueryParameters3D.new()
-		rayCastQueryParams.from = global_transform.origin
-		rayCastQueryParams.to = target.global_transform.origin + Vector3(0,.55,0)
-		rayCastQueryParams.exclude = [self]
-
-		#passes new dict to generate intersect_ray
-		var result = space_state.intersect_ray(rayCastQueryParams)
-		if result: # make sure that the intersect ray has been created in the first place
-			if result.collider.is_in_group("Player"): # ensure the object we are hitting is the Player.
-				inLOS = true
-				increment_detectionMeter(1)
-				
-			else:
-				# Player is within FoV cone, but does not have consistent Line of Sight
-				inLOS = false
-	decrement_detectionMeter(1)
 
 func _process(delta):
 	if inFOV && inLOS == true:
@@ -77,7 +62,7 @@ func increment_detectionMeter(rate):
 func decrement_detectionMeter(rate):
 	if detectionMeter >= 0:
 		detectionMeter -= rate
-
+	
 func handle_detection_rate(distance, min_dist, mid_dist, max_dist, rate):
 	if distance <= min_dist:
 		pass
@@ -88,3 +73,26 @@ func handle_detection_rate(distance, min_dist, mid_dist, max_dist, rate):
 
 func getDistanceToPlayer(player):
 	return enemy.global_transform.origin.distance_to(player)
+
+func handleEnemyVision():
+	if target:
+		# creates object "RayQueryParameters3D" which is a dict. 
+		var rayCastQueryParams = PhysicsRayQueryParameters3D.new()
+		rayCastQueryParams.from = global_transform.origin
+		rayCastQueryParams.to = target.global_transform.origin + Vector3(0,.55,0)
+		rayCastQueryParams.exclude = [self]
+		
+		#passes new dict to generate intersect_ray
+		var result = space_state.intersect_ray(rayCastQueryParams)
+		if result: # make sure that the intersect ray has been created in the first place
+			if result.collider.is_in_group("Player"): # ensure the object we are hitting is the Player.
+				print("Line of Sight of " + str(result.collider))
+				inLOS = true
+				increment_detectionMeter(1)
+
+			else:
+				# Player is within FoV cone, but does not have consistent Line of Sight
+				inLOS = false
+	else: 
+		decrement_detectionMeter(1)
+
