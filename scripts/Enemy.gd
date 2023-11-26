@@ -1,12 +1,13 @@
 extends CharacterBody3D
+#class_name Enemy
 
 var target
 var space_state
-
+var detectionMeter = 0
 var inFOV = false
 var inLOS = false
-var currentEnemyState
-var detectionMeter = 0
+
+@export var maxDetectionMeter = 3000
 
 var lastKnownPos
 
@@ -14,11 +15,6 @@ var lastKnownPos
 @onready var fov = $FoVArea
 @onready var fovCone = $FoVArea/FoVColl
 
-enum EnemyState {
-	SEARCHING,
-	SUSPICIOUS,
-	PATROL
-	}
 
 func _ready():
 	space_state = get_world_3d().direct_space_state
@@ -38,19 +34,14 @@ func _physics_process(_delta):
 		if result: # make sure that the intersect ray has been created in the first place
 			if result.collider.is_in_group("Player"): # ensure the object we are hitting is the Player.
 				inLOS = true
-				currentEnemyState = EnemyState.SEARCHING
-				handle_detection_rate(getDistanceToPlayer(result.position), 1, 3, 5, 1)
+				increment_detectionMeter(1)
+				
 			else:
 				# Player is within FoV cone, but does not have consistent Line of Sight
 				inLOS = false
-				currentEnemyState = EnemyState.SUSPICIOUS
+	decrement_detectionMeter(1)
 
-		if detectionMeter >= 3000:
-			pass
-
-
-func _process(_delta):
-	handle_state(currentEnemyState)
+func _process(delta):
 	if inFOV && inLOS == true:
 		look_at(target.global_transform.origin, Vector3.UP) # Look at the player obj
 	
@@ -59,53 +50,41 @@ func _on_midrange_body_entered(body):
 	if body.is_in_group("Player"):
 		target = body
 		inFOV = true
-		# lastKnownPos = body.global_transform.origin
-		# go to last known position
-		currentEnemyState = EnemyState.SUSPICIOUS
 
 func _on_midrange_body_exited(body):
 	if body.is_in_group("Player"):
+			target = null
+			inFOV = false
+
+func _on_close_range_area_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	print("You are already dead.")
+	# TODO: Differentiate between being Close behind/Close in front
+	if body.is_in_group("Player"):
+		target = body
+
+func _on_close_range_area_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
+	print("Nani??")
+	if body.is_in_group("Player"):
 		target = null
-		inFOV = false
-		# get last known position
-		# lastKnownPos = body.global_transform
-		# go to last known position
-		# when you reach last known position
-		# turn around/patrol
-		currentEnemyState = EnemyState.PATROL
 
 func set_color(col):
 	$EnemyBody.get_active_material(0).set_albedo(col)
-
-func handle_state(_state):
-	match (_state):
-		EnemyState.SUSPICIOUS:
-			_suspicious()
-		EnemyState.SEARCHING:
-			_searching()
-		EnemyState.PATROL:
-			_patrol()
-
-func _patrol():
-	set_color(Color.DARK_BLUE)
-func _suspicious():
-	set_color(Color.YELLOW)
-func _searching():
-	set_color(Color.RED)
-
-func getDistanceToPlayer(player):
-	return enemy.global_transform.origin.distance_to(player)
-
+	
 func increment_detectionMeter(rate):
-	detectionMeter += rate
+	if detectionMeter <= maxDetectionMeter:
+		detectionMeter += rate
 
 func decrement_detectionMeter(rate):
-	detectionMeter -= rate
+	if detectionMeter >= 0:
+		detectionMeter -= rate
 
 func handle_detection_rate(distance, min_dist, mid_dist, max_dist, rate):
 	if distance <= min_dist:
-		currentEnemyState = EnemyState.SEARCHING
+		pass
 	elif distance >= min_dist and distance <= mid_dist:
 		increment_detectionMeter(rate * 2)
 	elif distance >= mid_dist and distance <= max_dist:
 		increment_detectionMeter(rate)
+
+func getDistanceToPlayer(player):
+	return enemy.global_transform.origin.distance_to(player)
