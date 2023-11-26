@@ -1,9 +1,10 @@
-[gd_scene load_steps=187 format=3 uid="uid://dxvvlck8lej3f"]
+[gd_scene load_steps=188 format=3 uid="uid://dxvvlck8lej3f"]
 
 [ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="1_q8fpv"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_elriq"]
 [ext_resource type="Script" path="res://scripts/hud.gd" id="3_s8mkj"]
 [ext_resource type="FontFile" uid="uid://biqtga8moh7ah" path="res://fonts/lilita_one_regular.ttf" id="3_w27de"]
+[ext_resource type="Script" path="res://scripts/debug.gd" id="5_sl1nw"]
 [ext_resource type="Texture2D" uid="uid://b1njklrjx5205" path="res://objects/Roads/Models/T (1).jpg" id="6_koq6o"]
 [ext_resource type="Material" uid="uid://d0k6yqf382nis" path="res://actuallyMaterials/concreteWallLined.tres" id="7_evrin"]
 [ext_resource type="Texture2D" uid="uid://dlcxyt1xug27k" path="res://objects/Roads/Models/T (4).jpg" id="7_ipndj"]
@@ -1890,6 +1891,17 @@ size_flags_vertical = 8
 text = "100%"
 label_settings = SubResource("LabelSettings_fpmwk")
 vertical_alignment = 2
+
+[node name="DebugPanel" type="PanelContainer" parent="HUD"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_sl1nw")
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/DebugPanel"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/DebugPanel/MarginContainer"]
+layout_mode = 2
 
 [node name="Enemies" type="Node" parent="."]
 

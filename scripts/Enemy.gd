@@ -23,14 +23,16 @@ enum EnemyState {
 func _ready():
 	space_state = get_world_3d().direct_space_state
 
-func _physics_process(delta):
+func _physics_process(_delta):
+
+	Global.debug.add_property("detectionMeter", detectionMeter, 2)
 	if target:
 		# creates object "RayQueryParameters3D" which is a dict. 
 		var rayCastQueryParams = PhysicsRayQueryParameters3D.new()
 		rayCastQueryParams.from = global_transform.origin
 		rayCastQueryParams.to = target.global_transform.origin + Vector3(0,.55,0)
 		rayCastQueryParams.exclude = [self]
-		
+
 		#passes new dict to generate intersect_ray
 		var result = space_state.intersect_ray(rayCastQueryParams)
 		if result: # make sure that the intersect ray has been created in the first place
@@ -47,15 +49,12 @@ func _physics_process(delta):
 			pass
 
 
-func _process(delta):
-	print(detectionMeter)
+func _process(_delta):
 	handle_state(currentEnemyState)
 	if inFOV && inLOS == true:
 		look_at(target.global_transform.origin, Vector3.UP) # Look at the player obj
-
 	
 
-		
 func _on_midrange_body_entered(body):
 	if body.is_in_group("Player"):
 		target = body
@@ -63,7 +62,6 @@ func _on_midrange_body_entered(body):
 		# lastKnownPos = body.global_transform.origin
 		# go to last known position
 		currentEnemyState = EnemyState.SUSPICIOUS
-
 
 func _on_midrange_body_exited(body):
 	if body.is_in_group("Player"):
@@ -76,10 +74,8 @@ func _on_midrange_body_exited(body):
 		# turn around/patrol
 		currentEnemyState = EnemyState.PATROL
 
-
 func set_color(col):
 	$EnemyBody.get_active_material(0).set_albedo(col)
-
 
 func handle_state(_state):
 	match (_state):
@@ -99,7 +95,7 @@ func _searching():
 
 func getDistanceToPlayer(player):
 	return enemy.global_transform.origin.distance_to(player)
-	
+
 func increment_detectionMeter(rate):
 	detectionMeter += rate
 
