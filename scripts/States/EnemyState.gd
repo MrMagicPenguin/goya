@@ -7,6 +7,7 @@ signal Transitioned
 @export var moveSpeed: float
 
 func Enter():
+	enemy.moveSpeed = moveSpeed
 	pass
 	
 func Exit():
