@@ -8,7 +8,7 @@ var inFOV = false
 var inLOS = false
 var moveSpeed = 3.0
 
-@export var maxDetectionMeter = 300
+@export var maxDetectionMeter = 150
 
 var lastKnownPos
 
@@ -28,13 +28,12 @@ func _ready():
 func _physics_process(_delta):
 	Global.debug.add_property("detectionMeter", detectionMeter, 1)
 	Global.debug.add_property("target?", target, 2)
-	handleEnemyVision()
-	moveToTarget()
+	Global.debug.add_property("inLOS?", inLOS,2)
+
 	
 
 func _process(_delta):
-	if inFOV && inLOS == true:
-		look_at(target.global_transform.origin, Vector3.UP) # Look at the player obj
+	pass
 	
 func _on_midrange_body_entered(body):
 	if body.is_in_group("Player"):
@@ -45,6 +44,7 @@ func _on_midrange_body_exited(body):
 	if body.is_in_group("Player"):
 			target = null
 			inFOV = false
+			inLOS = false
 
 func set_color(col):
 	$EnemyBody.get_active_material(0).set_albedo(col)
@@ -72,7 +72,7 @@ func handleEnemyVision():
 	if target:
 		# creates object "RayQueryParameters3D" which is a dict. 
 		var rayCastQueryParams = PhysicsRayQueryParameters3D.new()
-		rayCastQueryParams.from = global_transform.origin
+		rayCastQueryParams.from = global_transform.origin + Vector3(0, 0.55,0)
 		rayCastQueryParams.to = target.global_transform.origin + Vector3(0,.55,0)
 		rayCastQueryParams.exclude = [self]
 		
@@ -96,3 +96,8 @@ func moveToTarget():
 		var nextNavPoint = navAgent.get_next_path_position()
 		velocity = (nextNavPoint - global_transform.origin).normalized() * moveSpeed
 		move_and_slide()
+
+
+func lookAtTarget():
+	if inFOV && inLOS == true:
+		look_at(target.global_transform.origin, Vector3.UP)

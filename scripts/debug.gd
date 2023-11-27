@@ -11,7 +11,7 @@ func _ready():
 	Global.debug = self
 	
 	# Hide Debug Panel on load
-	visible = false
+	visible = true
 
 	#add_debug_property("FPS","frames_per_second")
 

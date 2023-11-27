@@ -50,12 +50,14 @@ initial_state = NodePath("stateEnemyIdle")
 
 [node name="stateEnemyIdle" type="Node" parent="StateMachine"]
 script = ExtResource("3_k4riw")
+moveSpeed = 2.0
 
 [node name="stateEnemyPatrol" type="Node" parent="StateMachine"]
 script = ExtResource("4_4dcyq")
 
 [node name="stateEnemySuspicious" type="Node" parent="StateMachine"]
 script = ExtResource("5_3av34")
+moveSpeed = 3.0
 
 [node name="stateEnemySearching" type="Node" parent="StateMachine"]
 script = ExtResource("6_sf0rn")

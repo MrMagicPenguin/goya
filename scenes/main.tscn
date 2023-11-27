@@ -1878,7 +1878,7 @@ points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 
 environment = ExtResource("1_q8fpv")
 
 [node name="Player" parent="." node_paths=PackedStringArray("crosshair") instance=ExtResource("2_elriq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25437, 2.49714, -241.805)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.43304, 2.49714, -225.744)
 movement_speed = 3
 jump_strength = 6
 crosshair = NodePath("../HUD/Crosshair")
@@ -3898,7 +3898,7 @@ data = {
 }
 
 [node name="Enemy" parent="." instance=ExtResource("47_sml58")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14.081, 0, -228.99)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14.081, -0.09044, -228.99)
 player_path = NodePath("../Player")
 
 [node name="ProvingGrounds" type="Node" parent="."]
@@ -3911,40 +3911,40 @@ transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, -0.0718575, 2.28882e-05, -2
 mesh = SubResource("PlaneMesh_781m2")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="ProvingGrounds/NavigationRegion3D/Ground"]
+[node name="StaticBody3DGround" type="StaticBody3D" parent="ProvingGrounds/NavigationRegion3D/Ground"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ProvingGrounds/NavigationRegion3D/Ground/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ProvingGrounds/NavigationRegion3D/Ground/StaticBody3DGround"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_ra0e8")
 
-[node name="Obstacle" type="MeshInstance3D" parent="ProvingGrounds/NavigationRegion3D/Ground"]
-transform = Transform3D(0.25, 0, 0, 0, 3.43847, 0, 0, 0, 0.05, 0, 1.5, 0)
+[node name="Obstacle" type="MeshInstance3D" parent="ProvingGrounds/NavigationRegion3D"]
+transform = Transform3D(5, 0, 0, 0, 3.43847, 0, 0, 0, 1, -0.0718575, 1.50002, -237.244)
 mesh = SubResource("BoxMesh_607ul")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="ProvingGrounds/NavigationRegion3D/Ground/Obstacle"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ProvingGrounds/NavigationRegion3D/Obstacle"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ProvingGrounds/NavigationRegion3D/Ground/Obstacle/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ProvingGrounds/NavigationRegion3D/Obstacle/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_knfax")
 
-[node name="Obstacle2" type="MeshInstance3D" parent="ProvingGrounds/NavigationRegion3D/Ground"]
-transform = Transform3D(0.25, 0, 0, 0, 1, 0, 0, 0, 0.05, -0.35, 0.5, 0.15)
+[node name="Obstacle2" type="MeshInstance3D" parent="ProvingGrounds/NavigationRegion3D"]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 1, -7.07186, 0.500023, -234.244)
 mesh = SubResource("BoxMesh_607ul")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="ProvingGrounds/NavigationRegion3D/Ground/Obstacle2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ProvingGrounds/NavigationRegion3D/Obstacle2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ProvingGrounds/NavigationRegion3D/Ground/Obstacle2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ProvingGrounds/NavigationRegion3D/Obstacle2/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_y6v3g")
 
-[node name="Obstacle3" type="MeshInstance3D" parent="ProvingGrounds/NavigationRegion3D/Ground"]
-transform = Transform3D(0.25, 0, 0, 0, 1, 0, 0, 0, 0.05, 0.25, 0.5, 0.15)
+[node name="Obstacle3" type="MeshInstance3D" parent="ProvingGrounds/NavigationRegion3D"]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 1, 4.92814, 0.500023, -234.244)
 mesh = SubResource("BoxMesh_607ul")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="ProvingGrounds/NavigationRegion3D/Ground/Obstacle3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ProvingGrounds/NavigationRegion3D/Obstacle3"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ProvingGrounds/NavigationRegion3D/Ground/Obstacle3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ProvingGrounds/NavigationRegion3D/Obstacle3/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_hlcox")
 
 [connection signal="health_updated" from="Player" to="HUD" method="_on_health_updated"]
