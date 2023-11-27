@@ -46,7 +46,7 @@ polygon = PackedVector2Array(0.5, 1, 5, 3, 5, -3, 0.5, -1, -0.5, -1, -1.2, 0, -0
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_fiido")
-initial_state = NodePath("stateEnemyIdle")
+initial_state = NodePath("stateEnemyPatrol")
 
 [node name="stateEnemyIdle" type="Node" parent="StateMachine"]
 script = ExtResource("3_k4riw")
@@ -64,6 +64,8 @@ script = ExtResource("6_sf0rn")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 height = 2.0
+
+[node name="PatrolPoints" type="Node" parent="."]
 
 [connection signal="body_entered" from="FoVArea" to="." method="_on_midrange_body_entered"]
 [connection signal="body_exited" from="FoVArea" to="." method="_on_midrange_body_exited"]

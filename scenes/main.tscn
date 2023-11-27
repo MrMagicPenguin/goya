@@ -3897,9 +3897,9 @@ data = {
 "cells": PackedInt32Array(65396, 87, 1441792, 65361, 57, 1441792, 65306, 65466, 1441792, 65281, 65502, 1441797, 65327, 65433, 1441797, 65326, 65432, 1441797, 65347, 80, 1441798, 65265, 8, 1441798, 65266, 8, 1441798, 65307, 161, 1441798, 65367, 65522, 1441794, 65401, 44, 1441794, 65310, 65469, 1441794, 65310, 65468, 1441794, 65309, 65467, 1441794, 65273, 65506, 1441795, 65276, 65506, 1441795, 65378, 65453, 1441795, 65358, 221, 1441800, 65373, 65531, 1441800, 65256, 39, 1441796, 65391, 65509, 1441796, 65407, 136, 1441793, 65407, 10, 1441793)
 }
 
-[node name="Enemy" parent="." instance=ExtResource("47_sml58")]
+[node name="Enemy" parent="." node_paths=PackedStringArray("PatrolPoints") instance=ExtResource("47_sml58")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14.081, -0.09044, -228.99)
-player_path = NodePath("../Player")
+PatrolPoints = [NodePath("../ProvingGrounds/PatrolPoints/Marker3D"), NodePath("../ProvingGrounds/PatrolPoints/Marker3D2"), NodePath("../ProvingGrounds/PatrolPoints/Marker3D3"), NodePath("../ProvingGrounds/PatrolPoints/Marker3D4")]
 
 [node name="ProvingGrounds" type="Node" parent="."]
 
@@ -3946,6 +3946,24 @@ skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ProvingGrounds/NavigationRegion3D/Obstacle3/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_hlcox")
+
+[node name="PatrolPoints" type="Node" parent="ProvingGrounds"]
+
+[node name="Marker3D" type="Marker3D" parent="ProvingGrounds/PatrolPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5104, 0, -225.549)
+gizmo_extents = 1.0
+
+[node name="Marker3D2" type="Marker3D" parent="ProvingGrounds/PatrolPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5104, 0, -241.338)
+gizmo_extents = 1.0
+
+[node name="Marker3D3" type="Marker3D" parent="ProvingGrounds/PatrolPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3011, 0, -241.338)
+gizmo_extents = 1.0
+
+[node name="Marker3D4" type="Marker3D" parent="ProvingGrounds/PatrolPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3011, 0, -241.338)
+gizmo_extents = 1.0
 
 [connection signal="health_updated" from="Player" to="HUD" method="_on_health_updated"]
 

@@ -12,4 +12,5 @@ func Update(_delta: float):
 	pass
 	
 func Physics_Update(_delta: float):
-	pass
+	enemy.moveToTarget(enemy.PatrolPoints[0])
+	

@@ -9,7 +9,9 @@ var inLOS = false
 var moveSpeed = 3.0
 
 @export var maxDetectionMeter = 150
+@export var PatrolPoints : Array[Marker3D]
 
+# TODO
 var lastKnownPos
 
 @onready var enemy = $"."
@@ -17,13 +19,12 @@ var lastKnownPos
 @onready var fovCone = $FoVArea/FoVColl
 @onready var navAgent = $NavigationAgent3D
 
-var player = null
-@export var player_path: NodePath
+
 
 
 func _ready():
 	space_state = get_world_3d().direct_space_state
-	player = get_node(player_path)
+	# player = get_node(player_path)
 
 func _physics_process(_delta):
 	Global.debug.add_property("detectionMeter", detectionMeter, 1)
@@ -65,9 +66,6 @@ func handle_detection_rate(distance, min_dist, mid_dist, max_dist, rate):
 	elif distance >= mid_dist and distance <= max_dist:
 		increment_detectionMeter(rate)
 
-func getDistanceToPlayer(player):
-	return enemy.global_transform.origin.distance_to(player)
-
 func handleEnemyVision():
 	if target:
 		# creates object "RayQueryParameters3D" which is a dict. 
@@ -89,13 +87,12 @@ func handleEnemyVision():
 	if !target and !inLOS:
 		decrement_detectionMeter(1)	
 
-func moveToTarget():
-	if target:
-		velocity = Vector3.ZERO
-		navAgent.set_target_position(target.global_transform.origin)
-		var nextNavPoint = navAgent.get_next_path_position()
-		velocity = (nextNavPoint - global_transform.origin).normalized() * moveSpeed
-		move_and_slide()
+func moveToTarget(_target):
+	velocity = Vector3.ZERO
+	navAgent.set_target_position(_target.global_transform.origin)
+	var nextNavPoint = navAgent.get_next_path_position()
+	velocity = (nextNavPoint - global_transform.origin).normalized() * moveSpeed
+	move_and_slide()
 
 
 func lookAtTarget():

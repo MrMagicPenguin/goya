@@ -13,6 +13,6 @@ func Update(_delta: float):
 func Physics_Update(_delta: float):
 	enemy.handleEnemyVision()
 	enemy.lookAtTarget()
-	enemy.moveToTarget()
+	enemy.moveToTarget(enemy.target)
 	if enemy.detectionMeter <= enemy.maxDetectionMeter / 2:
 		Transitioned.emit(self, "stateEnemySuspicious")
